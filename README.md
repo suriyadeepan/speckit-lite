@@ -1,4 +1,4 @@
-# Suriya's Codex skills
+# 🍂Spec Kit Lite
 
 I built these lightweight Codex skills to bring a clear, traceable feature workflow to projects that are largely Python-based. They guide planning, implementation, analysis, and verification through requirements, plans, and task documents.
 
