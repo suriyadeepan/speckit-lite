@@ -14,58 +14,51 @@ A battle-tested, lightweight version of GitHub Spec Kit: reusable Codex workflow
 
 ## Install
 
-Requirements: Python 3.8 or newer. From this repository, run the same command on macOS, Linux, or Windows:
+Requirements: Python 3.8 or newer. Clone the repository once, then run the installer. It installs the skills into `~/.agents/skills/` and can copy `AGENTS.md` into a project folder.
+
+macOS or Linux:
 
 ```sh
-python setup.py
+git clone https://github.com/suriyadeepan/speckit-lite.git
+python speckit-lite/setup.py --project /path/to/your/project
 ```
 
-If your system uses `python3` on macOS or Linux:
+On systems where the command is `python3`:
 
 ```sh
-python3 setup.py
+python3 speckit-lite/setup.py --project /path/to/your/project
 ```
 
-The script installs the five skill folders into `~/.agents/skills/`, which Codex uses for user-wide skills. On Windows it resolves the home directory from the current user's profile. It does not modify existing skills; if any destination skill already exists, the script reports it and leaves it unchanged.
+Windows PowerShell:
 
-To update or replace already installed copies, run:
+```powershell
+git clone https://github.com/suriyadeepan/speckit-lite.git
+py .\speckit-lite\setup.py --project "C:\path\to\your\project"
+```
+
+Review the copied `AGENTS.md` and adapt it to the project as needed. On Windows, skills are installed under the current user's home directory.
+
+To update or replace already installed skills, run:
 
 ```sh
-python setup.py --update
+python speckit-lite/setup.py --update --project /path/to/your/project
 ```
 
 Restart Codex or start a new session after installing so it discovers the skills.
 
 ## Use in Codex
 
-Start a Codex session in a project that follows the workflow described by `AGENTS.md`. Ask for the named workflow directly, for example:
+Start Codex in your project, then walk a small feature through the skills. For example, to add a `/health` endpoint that returns `{"status":"ok"}`:
 
-```text
-Use the plan skill to turn the feature request into requirements and an implementation plan.
-```
+1. **Requirement:** Ask Codex, “Add a `/health` endpoint that returns `{"status":"ok"}`.” This is the feature request to refine.
+2. `$plan {req}` : “Use the plan skill to turn this request into requirements and an implementation plan.” Review and approve the plan before proceeding.
+3. `$tasks` :  “Use the tasks skill to create an ordered TODO from the approved plan.” This breaks the plan into traceable implementation tasks.
+4. `$analyze` : “Use the analyze skill to check the requirements, plan, and TODO for gaps or inconsistencies.” Fix any issues before coding.
+5. `$implement T00x` : “Use the implement skill to complete the TODO.” Codex works through the approved tasks and records verification.
+6. `$converge` : “Use the converge skill to verify the implementation against the requirements and record any remaining gaps.”
 
-```text
-Use the tasks skill to create a dependency-ordered TODO from the approved plan.
-```
-
-```text
-Use the implement skill for tasks T001-T003.
-```
-
-```text
-Use the analyze skill to review the current requirements, plan, and TODO for material gaps.
-```
-
-```text
-Use the converge skill to verify the whole feature against its requirements and plan.
-```
-
-These skills describe a workflow; they do not replace project-specific instructions. Add `AGENTS.md` to the project root if you want Codex to follow these repository conventions. Codex combines global and repository `AGENTS.md` instructions with the user's current request, so resolve conflicts before adopting the file.
+These skills guide the workflow; project-specific instructions still apply. Review and adapt the copied `AGENTS.md` before using it, since Codex combines it with your project's instructions and the current request.
 
 ## Manual install
 
-Copy a skill directory (including its `SKILL.md`) into `~/.agents/skills/`. For a single project, use that project's `.agents/skills/` directory. Copy `AGENTS.md` to the project root only after adapting it to the project.
-
-## License
-
-No license is specified yet. Add a license before redistributing if you want to grant the public explicit reuse rights.
+Copy a skill directory (including its `SKILL.md`), for example `skills/plan` into `~/.agents/skills/`. For a single project, use that project's `.agents/skills/` directory. Copy `AGENTS.md` to the project root only after adapting it to the project.
