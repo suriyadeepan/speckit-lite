@@ -1,6 +1,6 @@
 # Suriya's Codex skills
 
-A battle-tested, lightweight version of GitHub Spec Kit: reusable Codex workflows for planning, implementing, analyzing, and converging software features. These skills are designed for repositories that use requirement, plan, and task documents with traceable IDs.
+I built these lightweight Codex skills to bring a clear, traceable feature workflow to projects that are largely Python-based. They guide planning, implementation, analysis, and verification through requirements, plans, and task documents.
 
 ## Included skills
 
