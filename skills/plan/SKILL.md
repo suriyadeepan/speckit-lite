@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Resolve feature requirements and produce an implementation plan and ordered TODO after human approval.
+description: Resolve feature requirements and produce an implementation plan 
 ---
 
 1. Copy user-provided requirements into `docs/00x-<feature>-requirements.md`.
@@ -14,7 +14,7 @@ description: Resolve feature requirements and produce an implementation plan and
 
 4. Inspect architecture, dependencies, existing implementation and Git status.
 
-5. Create and switch to feat/<1-2-word-slug> (max 20 chars), derived from requirements. Skip if already on the appropriate branch. Never discard existing changes.
+5. Create and switch to `feat/<1-2-word-slug>` (max 20 chars), derived from requirements. Skip if already on the appropriate branch. Never discard existing changes.
 
 6. Identify gaps, assumptions, risks and affected files.
 
@@ -32,10 +32,8 @@ description: Resolve feature requirements and produce an implementation plan and
    - References to applicable requirement IDs.
    - Unique, stable hierarchical IDs for every plan item and subitem (`P001`, `P001.1`, etc.). Never reuse IDs.
 
-9. Present the plan for human approval. No coding before approval.
+9. Create/update `.current` with the active feature ID, requirements, plan, expected TODO, and journal paths.
 
-10. After approval, generate `docs/00x-<feature>-todo.md` with ordered, uniquely ID'd tasks, acceptance criteria and references to applicable requirement and plan IDs.
-
-11. Create/update `.current` with the active feature ID, requirements, plan, TODO, and journal paths.
+10. Present a concise, simplified version of requirements and plan for explicit human approval 
 
 Keep documents concise. No code changes during planning.
