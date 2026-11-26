@@ -1,4 +1,4 @@
-- Always read `.current` to establish the active feature and its authoritative requirements, plan, TODO, and journal;
+- Always read `.current` to establish the active feature and its authoritative requirements, plan, TODO, and journal; Keep `.current` local
 - Do not read from or write to these directories: ./docs/user/
 - **Architecture:** Respect established architecture and compatibility constraints. Record new decisions and deviations in the approved plan.
 - **Branch/docs:** One feature branch at a time. Keep all feature documents in `docs/`:
