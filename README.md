@@ -62,3 +62,13 @@ These skills guide the workflow; project-specific instructions still apply. Revi
 ## Manual install
 
 Copy a skill directory (including its `SKILL.md`), for example `skills/plan` into `~/.agents/skills/`. For a single project, use that project's `.agents/skills/` directory. Copy `AGENTS.md` to the project root only after adapting it to the project.
+
+## Set auto `/compact`
+
+While running `$orchestrate` skill you might overload the context-window and your agent might be working in dumb zone (context rot). You might wanna setup auto-compact.
+
+Set flag in `~/.codex/config.toml`
+
+```toml
+model_post_turn_compact_threshold_percent = 40
+```
