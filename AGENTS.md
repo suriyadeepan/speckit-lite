@@ -9,7 +9,14 @@
   - `docs/tutorial-00x-<feature>.md` — User-facing tutorial; create on request or completion. Append, never overwrite.
 - **Project state:** Never duplicate task status across documents. Keep plan/TODO aligned. Journal implementation history, not task status.
 - **Testing:** Maintain unit, integration and deployment smoke tests. Track implementation, automated testing and real-world verification separately. Use prescribed environments (`uv` for Python). Convert repeatable manual checks/fixes into regression tests. Record commands, results and evidence in the journal. Never claim unverified success.
-- **Git:** Inspect `git status` before each top-level TODO, not nested items. If dirty, inspect and ask how to proceed. Never silently carry, overwrite or discard changes. Stage only task-related files; review staged diffs and run `git diff --cached --check`. Auto-commit only when TODO items are completed, only after all relevant tests and verification pass.
+- **Git status:** Check `git status` before each top-level TODO. If dirty, inspect and ask how to proceed. Never silently carry, overwrite or discard changes.
+- **Git:** Stage only task-related files; review staged diffs and run `git diff --cached --check`. Commit completed TODOs only after all relevant tests and verification pass. Push each commit to the feature branch's remote. Never force-push without approval.
 - **Infrastructure/security:** Terraform/Pulumi plan allowed. Human approval REQUIRED for apply, destroy, IAM/security changes and destructive operations. Document affected resources and exact IAM actions. Never expose, modify or transmit secrets, credentials, tokens or personal data without permission.
 - **Debugging:** State failure, hypothesis, evidence, smallest experiment and expected result before troubleshooting. One hypothesis per experiment. Preserve useful logs/reproductions; avoid speculative fixes.
 - **Efficiency:** Minimize tokens/tool calls. Read only relevant files. Keep responses concise.
+
+## Workflow
+- Use `$orchestrate` for feature development.
+- After plan approval, execute automatically through convergence.
+- Invoke `$decide` before asking the user about decisions.
+- Respect all project rules and approval gates.
