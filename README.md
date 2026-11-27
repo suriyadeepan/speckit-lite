@@ -6,11 +6,13 @@ I built these lightweight Codex skills to bring a clear, traceable feature workf
 
 - **analyze** — Find material gaps and inconsistencies in requirements, architecture, plans, and TODOs.
 - **converge** — Verify an implementation against its requirements and record remaining work.
+- **decide** — Resolve routine project decisions from available evidence and escalate gated decisions.
 - **implement** — Implement approved TODO tasks with lineage, verification, and commit guidance.
+- **orchestrate** — Run the feature lifecycle from planning through convergence, continuing after plan approval.
 - **plan** — Turn requirements into an approved plan and ordered TODO.
 - **tasks** — Generate a dependency-ordered, traceable TODO from an approved plan.
 
-`AGENTS.md` contains the repository workflow guidance these skills refer to. It is intended to be copied into a project where you want these conventions applied; review and adapt it to that project's workflow first.
+`AGENTS.md` contains the repository workflow guidance these skills refer to. It covers Git status, staging, commit and push rules, and workflow through `$orchestrate` and `$decide`, alongside testing, debugging, and infrastructure/security safeguards. It is intended to be copied into a project where you want these conventions applied; review and adapt it to that project's workflow first.
 
 ## Install
 
@@ -57,7 +59,7 @@ Start Codex in your project, then walk a small feature through the skills. For e
 5. `$implement T00x` : “Use the implement skill to complete the TODO.” Codex works through the approved tasks and records verification.
 6. `$converge` : “Use the converge skill to verify the implementation against the requirements and record any remaining gaps.”
 
-These skills guide the workflow; project-specific instructions still apply. Review and adapt the copied `AGENTS.md` before using it, since Codex combines it with your project's instructions and the current request.
+For the complete lifecycle, use `$orchestrate`: it runs planning, waits for plan approval, then continues through tasks, analysis, implementation, and convergence. Use `$decide` to resolve routine choices from project evidence; it escalates decisions that need approval or user input. Project-specific instructions still apply, so review and adapt the copied `AGENTS.md` before using it.
 
 ## Manual install
 
