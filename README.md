@@ -72,5 +72,10 @@ While running `$orchestrate` skill you might overload the context-window and you
 Set flag in `~/.codex/config.toml`
 
 ```toml
-model_post_turn_compact_threshold_percent = 40
+model_post_turn_compact_threshold_percent = 50
+# model_post_turn_compact_threshold_percent is a post-turn compaction setting.
+# It does not necessarily interrupt an ongoing orchestration run to compact midway.
+model_auto_compact_token_limit = 129000
+# context window size of luna is 258,000 tokens
+# 50% of that is 129,000
 ```
